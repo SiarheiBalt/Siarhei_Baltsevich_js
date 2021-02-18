@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="container">
+    <header>
+        <button id="button" onclick="clickMePlues()">
+            Click +
+        </button>
+        <div class="table" id="rect"></div>
+        <button id="butt" onclick="clickMeMinus()">
+            Click -
+        </button>
+
+    </header>
+    <hr>
+    <main>
+        <div class="input__button"> 
+            <input id="input" type="text" title="Введи задание." > 
+            <button id="submit">submit</button> 
+        </div>
+        <div id="outToDo"></div>
+    </main>
+    <hr>
+    <div class="sumator">
+        <input type="text" id="oneNum" > +
+        <input type="text" id="twoNum">
+        <button id="eaq" onclick="sum()"> =</button>
+        <div class="outputSum" id="outSum"></div>
+    </div>
+</div>
+<script src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+body{
+    
+}
+.container {
+    max-width: 1000px;
+    margin: auto;
+    background-color: antiquewhite;
+}
+header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 75px;
+}
+main {
+    padding: 30px;
+}
+button {
+    width: 100px;
+    height: 50px;
+}
+.table {
+    width: 80px; 
+    height: 50px; 
+    background-color: aqua; 
+    text-align: center;
+    border: solid 1px;
+    font-size: 2em;
+}
+.input__button {
+    border: solid 1px; 
+    width: 350px; 
+    height: 80px; 
+    display: flex; 
+    justify-content: space-around; 
+    align-items: center;
+}
+#input {
+    width: 220px;
+}
+li {
+background-color: rgb(212, 227, 228);
+}
+.sumator {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+}
+.outputSum {
+    width: 350px;
+    font-size: 1.2em;
+}
+.red {
+    color: red;
+    font-size: 1.2em;
+}
