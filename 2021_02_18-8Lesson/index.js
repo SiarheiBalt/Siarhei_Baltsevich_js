@@ -1,13 +1,4 @@
-let one = document.getElementById('1');
-let two = document.getElementById('2');
-let three = document.getElementById('3');
-let four = document.getElementById('4');
-let five = document.getElementById('5');
-let six = document.getElementById('6');
-let seven = document.getElementById('7');
-let eight = document.getElementById('8');
-let nine = document.getElementById('9');
-let zero = document.getElementById('0');
+let getNum = document.querySelectorAll('.number')
 let negative = document.getElementById('negative');
 
 let split = document.getElementById('split');
@@ -26,136 +17,22 @@ let equals = document.getElementById('equals');
 
 let operation, result;
 
-one.addEventListener('click', addOne)
-function addOne() {
-    out.value = '';
-    if (operation != '/' && operation != '*' && operation != '+'&& operation != '-') {
-        outNum1 = outNum1 + '1';
-        out.value = +outNum1
-    } else {
-        outNum2 = outNum2 + '1';
+for (let i = 0; i< getNum.length; i++) {
+  
+    getNum[i].addEventListener('click', function () {
         out.value = '';
-        out.value = +outNum2
-        
-    }
-};
-two.addEventListener('click', addTwo);
-function addTwo() {
-    out.value = '';
-    if (operation != '/' && operation != '*' && operation != '+'&& operation != '-') {
-        outNum1 = outNum1 + '2';
-        out.value = +outNum1
-    } else {
-        outNum2 = outNum2 + '2';
-        out.value = '';
-        out.value = +outNum2
-        
-    }
-};
-three.addEventListener('click', addThree);
-function addThree() {
-    out.value = '';
-    if (operation != '/' && operation != '*' && operation != '+'&& operation != '-') {
-        outNum1 = outNum1 + '3';
-        out.value = +outNum1
-    } else {
-        outNum2 = outNum2 + '3';
-        out.value = '';
-        out.value = +outNum2
-        
-    }
+        if (operation != '/' && operation != '*' && operation != '+'&& operation != '-') {
+            outNum1 = outNum1 + getNum[i].innerHTML;
+            out.value = +outNum1
+        } else {
+            outNum2 = outNum2 + getNum[i].innerHTML;
+            out.value = '';
+            out.value = +outNum2
+            
+        }
+    }); 
 }
-four.addEventListener('click', addFour);
-function addFour() {
-    out.value = '';
-    if (operation != '/' && operation != '*' && operation != '+'&& operation != '-') {
-        outNum1 = outNum1 + '4';
-        out.value = +outNum1
-    } else {
-        outNum2 = outNum2 + '4';
-        out.value = '';
-        out.value = +outNum2
-        
-    }
-};
-five.addEventListener('click', addFive);
-function addFive() {
-    out.value = '';
-    if (operation != '/' && operation != '*' && operation != '+'&& operation != '-') {
-        outNum1 = outNum1 + '5';
-        out.value = +outNum1
-    } else {
-        outNum2 = outNum2 + '5';
-        out.value = '';
-        out.value = +outNum2
-        
-    }
-};
-six.addEventListener('click', addSix);
-function addSix() {
-    out.value = '';
-    if (operation != '/' && operation != '*' && operation != '+'&& operation != '-') {
-        outNum1 = outNum1 + '6';
-        out.value = +outNum1
-    } else {
-        outNum2 = outNum2 + '6';
-        out.value = '';
-        out.value = +outNum2
-        
-    }
-};
-seven.addEventListener('click', addSeven);
-function addSeven() {
-    out.value = '';
-    if (operation != '/' && operation != '*' && operation != '+'&& operation != '-') {
-        outNum1 = outNum1 + '7';
-        out.value = +outNum1
-    } else {
-        outNum2 = outNum2 + '7';
-        out.value = '';
-        out.value = +outNum2
-        
-    }  
-};
-eight.addEventListener('click', addEight);
-function addEight() {
-    out.value = '';
-    if (operation != '/' && operation != '*' && operation != '+'&& operation != '-') {
-        outNum1 = outNum1 + '8';
-        out.value = +outNum1
-    } else {
-        outNum2 = outNum2 + '8';
-        out.value = '';
-        out.value = +outNum2
-        
-    }
-};
-nine.addEventListener('click', addNine);
-function addNine() {
-    out.value = '';
-    if (operation != '/' && operation != '*' && operation != '+'&& operation != '-') {
-        outNum1 = outNum1 + '9';
-        out.value = +outNum1
-    } else {
-        outNum2 = outNum2 + '9';
-        out.value = '';
-        out.value = +outNum2
-        
-    }
-};
-zero.addEventListener('click', addZero);
-function addZero() {
-    out.value = '';
-    if (operation != '/' && operation != '*' && operation != '+'&& operation != '-') {
-        outNum1 = outNum1 + '0';
-        out.value = +outNum1
-    } else {
-        outNum2 = outNum2 + '0';
-        out.value = '';
-        out.value = +outNum2
-        
-    }
-};
+
 negative.addEventListener('click', addNeg);
 function addNeg() {
     out.value = '-';
