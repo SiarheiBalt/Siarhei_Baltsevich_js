@@ -17,7 +17,7 @@ function clickMeMinus() {
 
 let inp = document.querySelector('input');
 submit.onclick = function() {
-    let ul = document.createElement('ul');
+    let ul = document.createElement('ul');   /* Сделать чтоб ul не создавался каждый вызов*/
     let li = document.createElement('li');
     li.innerHTML = inp.value;
     ul.appendChild(li);
@@ -36,7 +36,8 @@ function sum() {
     let sum = +oneNum + +twoNum;
     if (isNaN(sum)) {
         sum = 'Не корректно введены числа!';
-        red.setAttribute('class', 'red outputSum');
+        // red.setAttribute('class', 'red outputSum');
+        red.classList.add('red')
     } 
     document.querySelector('.outputSum').innerHTML = sum;
 }
