@@ -1,0 +1,35 @@
+body {
+    width: 1000px;
+    margin: auto;
+    background-color: antiquewhite;
+}
+aside div{
+    border: solid 1px;
+    height: 21px;
+    padding-left: 10px;
+    background-color:rgb(242, 242, 242);
+}
+aside {
+    margin-top: 30px;
+}
+.buttonShow {
+    grid-column-start: span 2;
+}
+footer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 10px;
+    row-gap: 10px;
+    margin-bottom: 50px;
+}
+.show {
+    border: solid 1px;
+    background-color: rgb(242, 242, 242);
+    padding: 10px;
+}
+.titleInfoUser {
+    grid-column-start: span 3;
+}
+.titleShow {
+    grid-column-start: span 2;
+}

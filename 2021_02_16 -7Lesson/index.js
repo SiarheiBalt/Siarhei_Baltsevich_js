@@ -16,8 +16,8 @@ function clickMeMinus() {
 
 
 let inp = document.querySelector('input');
+let ul = document.createElement('ul');
 submit.onclick = function() {
-    let ul = document.createElement('ul');   /* Сделать чтоб ul не создавался каждый вызов*/
     let li = document.createElement('li');
     li.innerHTML = inp.value;
     ul.appendChild(li);
