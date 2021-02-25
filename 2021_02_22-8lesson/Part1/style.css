@@ -14,6 +14,7 @@ aside {
 }
 .buttonShow {
     grid-column-start: span 2;
+    cursor: pointer;
 }
 footer {
     display: grid;
@@ -32,4 +33,7 @@ footer {
 }
 .titleShow {
     grid-column-start: span 2;
+}
+main button {
+    cursor: pointer;
 }
