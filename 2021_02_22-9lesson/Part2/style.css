@@ -40,3 +40,8 @@ main {
     grid-row-end: 5;
     width: 150px;
 }
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

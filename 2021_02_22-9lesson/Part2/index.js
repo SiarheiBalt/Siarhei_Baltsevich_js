@@ -12,59 +12,92 @@ buttonSelect.addEventListener('click', function () {
     };
     let mainRemove = document.querySelector('main');
     mainRemove.innerHTML = '';
-//    console.log(selectTypeVideo);
+   
     // 'http://www.omdbapi.com/?apikey=14ec9722&s=war&t=movie&4'
     // Чтоб выводил 10 результатов -'s' вместо 't'
-    $.ajax( `http://www.omdbapi.com/?apikey=14ec9722&s=${inputAdd.value}&t=${selectTypeVideo}&4`, {
-        success: function (data) {
-        data['Search'].forEach(el => {
 
-            let divV = document.createElement('div');
-            divV.classList.add('grid');
-            let imgV = document.createElement('img');
-            imgV.src = el.Poster;
-            imgV.classList.add('gridItem')
-            let typeV = document.createElement('h5');
-            typeV.textContent = el.Type
+    let url = `http://www.omdbapi.com/?apikey=14ec9722&s=${inputAdd.value}&t=${selectTypeVideo}&4`;
+    let data = fetch(url)
+    .then ((response)=> {
+        return response.json();
+    })
+    .then((data) => {
+        if (data.Search) {
 
-            let titleV = document.createElement('h4');
-            titleV.textContent = el.Title;
+                data['Search'].forEach(el => {
 
-            let yearV = document.createElement('h5');
-            yearV.textContent = el.Year
-            let buttonV = document.createElement('button');
-            buttonV.textContent = 'Details';
-            // buttonV.setAttribute('id', el.imdbID)
-            divV.append(imgV, typeV, titleV, yearV, buttonV)
-            let main = document.querySelector('main').append(divV);
-            
-            buttonV.addEventListener('click', function () {
-                let footerRemove = document.querySelector('footer');
-                if ( footerRemove.innerHTML = '') {
-                    creatEllInfo(el.imdbID)
-                } else {
-                    footerRemove.innerHTML = '';
-                    creatEllInfo(el.imdbID)
-                }
-            })
-        });
-        }
-    }); 
+                    let divV = document.createElement('div');
+                    divV.classList.add('grid');
+                    let imgV = document.createElement('img');
+                    imgV.src = el.Poster;
+                    imgV.classList.add('gridItem')
+                    let typeV = document.createElement('h5');
+                    typeV.textContent = el.Type
+
+                    let titleV = document.createElement('h4');
+                    titleV.textContent = el.Title;
+
+                    let yearV = document.createElement('h5');
+                    yearV.textContent = el.Year
+                    let buttonV = document.createElement('button');
+                    buttonV.textContent = 'Details';
+                    // buttonV.setAttribute('id', el.imdbID)
+                    divV.append(imgV, typeV, titleV, yearV, buttonV)
+                    let main = document.querySelector('main').append(divV);
+
+                    buttonV.addEventListener('click', function () {
+                        let footerRemove = document.querySelector('footer');
+                        
+                            footerRemove.innerHTML = '';
+                            creatEllInfo(el.imdbID)
+                    })
+                });
+            }
+        })   
 });
 
 function creatEllInfo(items) {
-    $.ajax( `http://www.omdbapi.com/?apikey=14ec9722&i=${items}`, {
-        success: function (data) {
+
+    let url = `http://www.omdbapi.com/?apikey=14ec9722&i=${items}`;
+    let data = fetch(url)
+    .then ((response)=> {
+        return response.json();
+    })
+    .then((data) => { {
+        if(data) {
             let footer = document.querySelector('footer');
             let imgDetails = document.createElement('img');
             imgDetails.src = data.Poster;
             let divDetails = document.createElement('div');
-            let titleDetails = document.createElement('h4');
+            let titleDetails = document.createElement('h3');
             titleDetails.textContent = data.Title;
-            
-            divDetails.append(titleDetails, data.Released, data.Genre, data.Country, data.Director, data.Writer, data.Actors, data.Awards )
 
+            let relised = document.createElement('h4');
+            relised.textContent = data.Released;
+
+            let genre = document.createElement('h4');
+            genre.textContent = data.Genre;
+
+            let country = document.createElement('h4');
+            country.textContent = data.Country;
+
+            let director = document.createElement('h4');
+            director.textContent = data.Director;
+
+            let writer = document.createElement('h4');
+            writer.textContent = data.Writer;
+
+            let actors = document.createElement('h5');
+            actors.textContent = data.Actors;
+
+            let awards = document.createElement('h4');
+            awards.textContent = data.Awards;
+            
+            divDetails.style.width = '600px';
+            divDetails.append(titleDetails,  relised, genre, country, director, writer, actors, awards)
             footer.append(imgDetails, divDetails);
-            }
-        })
+        }    
+    }
+})
 }
+let mainTag = document.querySelector('main');
