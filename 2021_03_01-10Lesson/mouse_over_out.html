@@ -1,0 +1,21 @@
+
+<table border="1" id="tab">
+    <tr><th>1111111111</th><th>2222222222222</th></tr>
+    <tr><td>dvdwvwdvwdv</td><td>rgergergerhger</td></tr>
+    <tr><td>dvdwvwdvwdv</td><td>rgergergerhger</td></tr>
+    <tr><td>dvdwvwdvwdv</td><td>rgergergerhger</td></tr>
+    <tr><td>dvdwvwdvwdv</td><td>rgergergerhger</td></tr>
+</table>
+
+<script>
+    let td = document.querySelectorAll('td');
+
+td.forEach((el) => {
+    el.addEventListener('mouseover', function (event) {
+        event.path[0].style.backgroundColor = 'red';
+    })
+    el.addEventListener('mouseout', function (event) {
+        event.path[0].style.backgroundColor = '';
+    })
+})
+</script>

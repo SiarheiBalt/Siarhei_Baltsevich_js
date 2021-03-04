@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 500px;
+            height: 300px;
+            background-color: antiquewhite;
+            margin: auto;
+        }
+
+        .form {
+            width: 440px;
+            margin: 5px 0 0 20px;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        h2 {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Press Ctrl+E for edit text</h2>
+        <h2>Press Ctrl+S for save text</h2>
+        <hr>
+        <div>
+            <textarea class="form hide" name="" id="textArea" cols="30" rows="10"></textarea>
+            <div id="textDiv" class="form">Text</div>
+        </div>
+    </div>
+
+    <script>
+
+        document.addEventListener('keydown', function (event) {
+            let textArea = document.getElementById('textArea');
+            let textDiv = document.getElementById('textDiv');
+
+            if (event.code === 'KeyS' && event.ctrlKey == true) {
+                event.preventDefault();
+
+                textDiv.classList.remove('hide');
+                textArea.classList.add('hide');
+
+                textDiv.innerHTML = textArea.value;
+
+            }
+            if (event.code === 'KeyE' && event.ctrlKey == true) {
+                event.preventDefault()
+                textArea.classList.remove('hide');
+                textDiv.classList.add('hide');
+            }
+
+        })
+
+    </script>
+
+</body>
+
+</html>

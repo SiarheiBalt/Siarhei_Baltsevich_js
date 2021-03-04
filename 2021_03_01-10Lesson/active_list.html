@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .sel {
+    background-color: aliceblue;
+    }
+    </style>
+</head>
+<body>
+    
+    <ol id="ol">
+        <li>Lorem, ipsum dolor.</li>
+        <li>Lorem ipsum dolor sit.</li>
+        <li>Lorem, ipsum.</li>
+        <li>Lorem ipsum dolor sit amet consectetur.</li>
+        <li>Lorem.</li>
+    </ul>
+
+<script>
+
+ol.onclick = function (event) {
+   
+   if (event.target.tagName != 'LI')
+       return;
+   // if (event.ctrlKey || event.metaKey) {
+   //     toggleSelect(event.target) {
+   else {
+       singleSelect(event.target)
+   }
+}
+ol.onmousedown = function () {
+   return false;
+};
+// function toggleSelect(li) {
+//     li.classList.togle('sel');
+// }
+function singleSelect(li) {
+   let selected = ol.querySelectorAll('.sel');
+   for(let elem of selected) {
+       elem.classList.remove('sel');
+   }
+   li.classList.add('sel');
+}
+
+    </script>
+</body>
+</html>

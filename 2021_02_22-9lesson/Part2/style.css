@@ -1,18 +1,18 @@
 
 .container {
-    width: 1000px; 
+    max-width: 1000px; 
     margin: auto; 
     background-color: rgb(248, 241, 241);
 }
 h3 {
-    width: 200px; 
+    max-width: 200px; 
     margin: auto;
 }
 select {
     height: 22px;
 }
 .form {
-    width: 250px;
+    max-width: 250px;
     margin: auto;
     display: flex;
     justify-content: space-around;
@@ -33,12 +33,12 @@ main {
     gap: 10px;
     grid-template-rows: 50px 50px 50px 34px 50px;
     grid-template-columns: 150px 100px;
-    // width: 412px;
+
 }
 .gridItem {
     grid-row-start: 1;
     grid-row-end: 5;
-    width: 150px;
+    max-width: 150px;
 }
 footer {
     display: flex;

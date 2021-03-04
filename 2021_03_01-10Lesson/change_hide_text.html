@@ -1,0 +1,42 @@
+<style>
+    .but {
+        background-color: rgb(226, 211, 211);
+        border: none;
+        cursor: pointer;
+        padding: 14px 16px;
+    }
+    .but:hover {
+        background-color: rgb(159, 167, 175);
+    }
+    
+      </style>
+
+<div style="display: flex; flex-direction: column;">
+    <div><button id="html" class="but">HTML</button><button id="css" class="but">CSS</button><button id="js" class="but">JS</button ></div>
+    <div>
+        <div id="h">HTML (от англ. HyperText Markup Language — «язык гипертекстовой разметки») — стандартизированный язык разметки веб-страниц во Всемирной паутине.</div>
+        <div id="c">CSS (Cascading Style Sheets) — это код, который вы используете для стилизации вашей веб-страницы.</div>
+        <div id="j">JavaScript — это язык программирования, который даёт возможность реализовывать сложное поведение веб-страницы.</div>
+    </div>
+</div>
+
+<script>
+    function hideText() {
+document.querySelector('#h').style.display = 'none';
+document.querySelector('#c').style.display = 'none';
+document.querySelector('#j').style.display = 'none';
+}
+hideText();
+document.getElementById('html').addEventListener('click', function () {
+    hideText();
+    document.querySelector('#h').style.display = 'inherit';
+})
+document.getElementById('css').addEventListener('click', function () {
+    hideText();
+    document.querySelector('#c').style.display = 'inherit';
+})
+document.getElementById('js').addEventListener('click', function () {
+    hideText();
+    document.querySelector('#j').style.display = 'inherit';
+})
+</script>

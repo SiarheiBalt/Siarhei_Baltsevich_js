@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+    width: 800px;
+    display: flex;
+}
+.div_title {
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+}
+.hide {
+    display: none;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="div_title">
+            <button id="js">JS</button>
+            <button class="hide find_js">Reduce</button>
+        </div>
+        <div class="div_title">
+            <button id="css">CSS</button>
+            <button class="hide find_css">Flex</button>
+            <button class="hide find_css">Grid</button>
+        </div>
+        <div class="div_title">
+            <button id="html">HTML</button>
+            <button class="hide find_html">Api</button>
+        </div>
+    </div>
+
+    <script>
+
+let findHideJs = document.querySelectorAll('.find_js');
+let findHideCss = document.querySelectorAll('.find_css');
+let findHideHtml = document.querySelectorAll('.find_html');
+
+let buttonJS = document.querySelector('#js');
+
+buttonJS.addEventListener('click', function () {   
+    findHideJs.forEach((el) => {
+        if (el.classList.contains('hide')) {
+            el.classList.remove('hide')
+        } else {
+            el.classList.add('hide')
+        }
+    })
+})
+
+let buttonCss = document.querySelector('#css');
+buttonCss.addEventListener('click', function () {
+
+    findHideCss.forEach((el) => {
+        if (el.classList.contains('hide')) {
+            el.classList.remove('hide')
+        } else {
+            el.classList.add('hide')
+        }
+    })
+})
+
+let buttonHtml = document.querySelector('#html');
+buttonHtml.addEventListener('click', function () {
+    findHideHtml.forEach((el) => {
+        if (el.classList.contains('hide')) {
+            el.classList.remove('hide')
+        } else {
+            el.classList.add('hide')
+        }
+    })
+})
+
+    </script>
+
+</body>
+</html>

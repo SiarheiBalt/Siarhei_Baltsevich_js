@@ -1,0 +1,23 @@
+<div style="width: 300px; background-color: silver;">
+    <button id="but">Hide/ show text</button>
+    <div id="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, voluptatibus?</div>
+</div>
+
+<script>
+
+
+    document.querySelector('#but').addEventListener('click', handleClick);
+function handleClick(event) {
+    let div = document.querySelector('#text')
+    
+    // if (div.style.display === 'none') {
+    //     div.style.display = 'flex';
+    // } else {
+    //     div.style.display = 'none'
+    // }
+    div.style.display === 'none'?
+    div.style.display = 'flex':
+    div.style.display = 'none'
+}
+
+</script>

@@ -1,0 +1,22 @@
+
+<div style="width: 700px; margin: auto;">
+    <button id="like"><i class="far fa-thumbs-up"> like</i> <h4></h4></button>
+</div>
+<script src="https://kit.fontawesome.com/808597c4dd.js" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+   
+<script>
+
+let count = 0;
+let buttonLike = document.getElementById('like');
+document.querySelector('h4').innerHTML = count;
+
+buttonLike.addEventListener('click', function () {
+    document.querySelector('button').style.backgroundColor = 'blue'
+    count++;
+    document.querySelector('h4').innerHTML = count;
+})
+
+</script>
+
+</body>

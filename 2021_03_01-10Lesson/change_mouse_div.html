@@ -1,0 +1,29 @@
+<div id="div" class="container" style="width: 300px; height: 150px; border: solid 1px; background-color: silver;">
+
+</div>
+
+<script>
+    let div = document.querySelector('#div');
+
+let height;
+let weight;
+
+
+
+div.addEventListener('mousedown', function (event) {
+    
+    let f = true;
+    
+    div.addEventListener('mousemove', function (event) {
+        if (f ===  true) {
+            height = event.clientY;
+            weight = event.clientX;
+            div.style.width = `${weight}px`;
+            div.style.height = `${height}px`
+        }
+        div.addEventListener('mouseup', function (event) {
+            f = false;
+        })
+    })
+})
+</script>

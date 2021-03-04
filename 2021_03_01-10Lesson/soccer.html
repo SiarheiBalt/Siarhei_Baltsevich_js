@@ -1,0 +1,36 @@
+<style>
+    .container {
+        width: 800px;
+        height: 400px;
+        margin: auto;
+        background-color: springgreen;
+        /* position: relative; */
+    }
+
+    #ball {
+        /* position: absolute; */
+        transition: 1s all;
+
+    }
+</style>
+
+<div class="container">
+    <i id="ball" class="fas fa-basketball-ball"></i>
+</div>
+
+<script src="https://kit.fontawesome.com/808597c4dd.js" crossorigin="anonymous"></script>
+
+<script>
+
+    let container = document.querySelector('.container');
+    let ball = document.getElementById('ball')
+
+    container.addEventListener('click', function (event) {
+        let x = event.offsetX - 8;
+        let y = event.offsetY - 8;
+
+        ball.style.marginTop = `${y}px`;
+        ball.style.marginLeft = `${x}px`;
+    })
+
+</script>
