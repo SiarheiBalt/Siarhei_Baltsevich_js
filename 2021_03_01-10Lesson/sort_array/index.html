@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        main {
+            display: grid;
+            grid-template-columns: repeat(4, 100px);
+        }
+
+        main div {
+            padding-left: 10px;
+        }
+
+        h4 {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+<main>
+    <div class="firstname"><h4 onclick="buttonSortFirstname()">Firstname</h4></div>
+    <div class="lastname"><h4 onclick="buttonSortLastName()">Lastname</h4></div>
+    <div class="age"><h4 onclick="buttonSortAge()">Age</h4></div>
+    <div class="company"><h4 onclick="buttonSortCompany()">Company</h4></div>
+</main>
+
+<script src="index.js"></script>
+
+</body>
+
+</html>
