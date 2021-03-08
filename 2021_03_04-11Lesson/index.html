@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 700px;
+            margin: auto;
+            background-color: rgb(238, 235, 228);
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .form_input {
+            display: flex;
+        }
+
+        button:hover {
+            background-color: rgb(231, 204, 168);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form_input">
+            <input id="input" type="text">
+            <div class="button">
+                <button onclick="addLi()">
+                    Add
+                </button>
+            </div>
+        </div>
+        <div class="form_output">
+            <ul id="ul">
+
+            </ul>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
