@@ -1,0 +1,43 @@
+<script>
+
+//  Дан массив с числами. Найдите сумму этих чисел.
+let arr = [16, 42, 3, 0, 4, 50, -6];
+let arrSum = arr.reduce((acc, el) => {
+    return acc += el;
+})
+console.log('Сумма чисел массива равна' + ' ' + arrSum);
+
+// Дан массив с числами. Найдите сумму первых N элементов до первого нуля. Пример: [16, 42, 3, 0, 4, 50, -6] - суммируем первые 3 элемента, так как дальше стоит элемент с числом 0.
+let indexNull = arr.findIndex(el => el === 0);
+let arrSumBeforeNull = arr.splice(0, indexNull).reduce((acc, el) => {
+    return acc += el;
+})
+console.log('Сумма элементов до нуля равна' + ' ' + arrSumBeforeNull);
+// Дан массив с числами. Найдите сумму последних N элементов до первого нуля с конца. Пример: [1, 2, 3, 0, 4, 5, 6] - суммируем последние 3 элемента, так как дальше стоит элемент с числом 0.
+let arr1 = [2, 1, 5, 0, 4, 6, 2];
+let indexNullArr1 = arr1.findIndex(el => el == 0);
+let arrSumAfterNull = arr1.splice(indexNullArr1, arr1.length).reduce((acc, el) => acc += el);
+console.log('Сумма элементов после нуля равна ' + ' ' + arrSumAfterNull);
+
+// Дан массив с числами. Узнайте сколько элементов с начала массива надо сложить, чтобы в сумме получилось больше 10-ти.
+let arr2 = [2, 1, 5, 0, 4, 6, 2];
+function sumMoreTen(b) {
+    let a = b.reduce((acc, el, i) => {
+        if (i != 0) {
+            if (acc.reduce((acc, el) => acc += el) < 10) {
+                acc.push(el);
+            }
+        }
+        return acc
+    }, [b[0]])
+    return a;
+}
+let sumMoreThenTenStart = sumMoreTen(arr2);
+console.log(sumMoreThenTenStart.length + ' ' + 'элементов требуется с начала массива чтоб сумма была больше 10.');
+
+// Дан массив с числами. Узнайте сколько элементов с конца массива надо сложить, чтобы в сумме получилось больше 10-ти.
+let arr3 = [2, 1, 5, 0, 4, 6, 2];
+let sumMoreThenTenEnd = sumMoreTen(arr3.reverse());
+console.log(sumMoreThenTenEnd.length + ' ' + 'элементов требуется с конца массива чтоб сумма была больше 10.');
+
+</script>

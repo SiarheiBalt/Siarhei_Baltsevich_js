@@ -15,9 +15,9 @@ xhr.send()
 //     console.log(user);
 // }
 
-function copyArray(object) {
-    return object.concat([object]);
-}
+// function copyArray(object) {
+//     return object.concat([object]);
+// }
 
 // ###########___4___################
 xhr.onload = () => {

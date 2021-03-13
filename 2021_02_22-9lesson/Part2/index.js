@@ -16,7 +16,7 @@ buttonSelect.addEventListener('click', function () {
     // 'http://www.omdbapi.com/?apikey=14ec9722&s=war&t=movie&4'
     // Чтоб выводил 10 результатов -'s' вместо 't'
 
-    let url = `http://www.omdbapi.com/?apikey=14ec9722&s=${inputAdd.value}&t=${selectTypeVideo}&4`;
+    let url = `http://www.omdbapi.com/?apikey=14ec9722&s=${inputAdd.value}&type=${selectTypeVideo}&4`;
     let data = fetch(url)
         .then((response) => {
             return response.json();
