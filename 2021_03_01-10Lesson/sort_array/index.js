@@ -67,9 +67,8 @@ function sortPeopleOfFirstnameAscending(arr) {
             return -1;
         } else if (nameA > nameB) {
             return 1;
-        } else {
-            return 0;
-        }
+        } 
+        return 0;
     })
 }
 function sortPeopleOfFirstnameDescending(arr) {
@@ -80,9 +79,8 @@ function sortPeopleOfFirstnameDescending(arr) {
             return -1;
         } else if (nameA < nameB) {
             return 1;
-        } else {
-            return 0;
-        }
+        } 
+        return 0;
     })
 }
 function sortPeopleOfLastnameAscending(arr) {
@@ -93,9 +91,8 @@ function sortPeopleOfLastnameAscending(arr) {
             return -1;
         } else if (nameA > nameB) {
             return 1;
-        } else {
-            return 0;
         }
+        return 0;
     })
 }
 function sortPeopleOflastnameDescending(arr) {
@@ -106,9 +103,8 @@ function sortPeopleOflastnameDescending(arr) {
             return -1;
         } else if (nameA < nameB) {
             return 1;
-        } else {
-            return 0;
         }
+        return 0;
     })
 }
 function sortPeopleOfCompanyAscending(arr) {
@@ -119,9 +115,8 @@ function sortPeopleOfCompanyAscending(arr) {
             return -1;
         } else if (nameA > nameB) {
             return 1;
-        } else {
-            return 0;
         }
+        return 0;
     })
 }
 function sortPeopleOfCompanyDescending(arr) {
@@ -132,9 +127,8 @@ function sortPeopleOfCompanyDescending(arr) {
             return -1;
         } else if (nameA < nameB) {
             return 1;
-        } else {
-            return 0;
         }
+        return 0;
     })
 }
 
