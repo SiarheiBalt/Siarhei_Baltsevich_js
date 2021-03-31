@@ -1,6 +1,6 @@
 const bordKeys = {
     ru: 'йцукенгшщзхъфывапролджэячсмитьбю↵',
-    eng: `qwertyuiop[]asdfghjkl;'zxcvbnm,./↵`,
+    eng: 'qwertyuiop[]asdfghjkl;zxcvbnm,./↵',
     numbers: '1234567890-=⟵',
     shiftNumbers: '?!@#$%^*()_+⟵',
     caps: 'caps lock',
@@ -46,10 +46,13 @@ function handler(event) {
     if (key === '⟵') return backSpaceEvent()
     if (key.split('').length > 1) return keyDownUp(event);
     if (key === 'ᐸ' || key ==='ᐱ' || key ==='ᐯ' || key ==='ᐳ') return arrowsEvent(key)
+    let arrText = textArea.innerHTML.split('');
     stateSomeKeys['caps lock'] === true || stateSomeKeys.shift === true ?
-        textArea.innerHTML += event.target.innerHTML.toUpperCase() :
-        textArea.innerHTML += event.target.innerHTML.toLowerCase();
-        return focusCount = 0;
+    arrText.splice(textArea.innerHTML.length - focusCount, 0, event.target.innerHTML.toUpperCase()):
+    arrText.splice(textArea.innerHTML.length - focusCount, 0, event.target.innerHTML.toLowerCase());
+        
+    textArea.innerHTML = arrText.join('');
+        // return focusCount = 0;
 }
 function arrowsEvent(key) {
     if(key === 'ᐸ') {
