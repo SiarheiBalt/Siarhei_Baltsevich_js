@@ -1,8 +1,8 @@
 const bordKeys = {
     ru: 'йцукенгшщзхъфывапролджэячсмитьбю↵',
     eng: 'qwertyuiop[]asdfghjkl;zxcvbnm,./↵',
-    numbers: '1234567890-=⟵',
-    shiftNumbers: '?!@#$%^*()_+⟵',
+    numbers: 'ё1234567890-=⟵',
+    shiftNumbers: '`?!@#$%^*()_+⟵',
     caps: 'caps lock',
     shift: 'shift',
     alt: 'alt',

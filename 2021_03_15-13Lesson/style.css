@@ -12,11 +12,11 @@ aside {
     display: flex;
     flex-direction: column;
     align-items: baseline;
-    margin: 35px 10px 0 0; 
+    margin: 56px 10px 0 0; 
 }
 .keyboard {
     display: flex;
-    width: 460px;
+    width: 417px;
     margin: auto;
     background-color: rgb(143, 143, 143);
     border: 1px solid;
@@ -33,7 +33,7 @@ header button {
     margin: 1px;
 }
 aside button {
-    height: 25px;
+    font-size: 8px;
     margin: 1px;
 }
 .area {
@@ -55,4 +55,7 @@ aside button {
     position: absolute;
     margin: -40px 0px 0px 38px;
     width: 45px;
+}
+header{
+    margin: 0px 0px 3px -40px;
 }
