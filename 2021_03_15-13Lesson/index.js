@@ -13,11 +13,14 @@ stateSomeKeys = {
     shift: false,
     alt: false,
 }
-const main = document.querySelector('main');
-const aside = document.querySelector('aside');
-const footer = document.querySelector('footer');
-const header = document.querySelector('header');
-const textArea = document.querySelector('#textArea');
+function findDiv(...a) {
+   return a.reduce((acc, el) => { 
+        acc.push(document.querySelector(el))
+        return acc
+        }, [])
+}
+let [main, aside, footer, header, textArea] = findDiv('main', 'aside', 'footer', 'header', '#textArea')
+
 textArea.focus()
 
 createElAddEvent(bordKeys.ru.split(''), main);
