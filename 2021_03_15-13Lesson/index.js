@@ -50,7 +50,7 @@ function handler(event) {
     if (key.split('').length > 1) return keyDownUp(event);
     if (key === 'ᐸ' || key ==='ᐱ' || key ==='ᐯ' || key ==='ᐳ') return arrowsEvent(key)
     let arrText = textArea.innerHTML.split('');
-    stateSomeKeys['caps lock'] === true || stateSomeKeys.shift === true ?
+    stateSomeKeys['caps lock'] || stateSomeKeys.shift ?
     arrText.splice(textArea.innerHTML.length - focusCount, 0, event.target.innerHTML.toUpperCase()):
     arrText.splice(textArea.innerHTML.length - focusCount, 0, event.target.innerHTML.toLowerCase());
         
@@ -83,9 +83,9 @@ let focusCount = 0;
 function enterEvent() {
     textArea.innerHTML = textArea.innerHTML + '\n';
 }
-function moveFocus(c) {
+function moveFocus(count) {
     textArea.focus();
-    textArea.setSelectionRange(textArea.innerHTML.length, textArea.innerHTML.length - c);
+    textArea.setSelectionRange(textArea.innerHTML.length, textArea.innerHTML.length - count);
    
 }
 function backSpaceEvent() {
@@ -99,7 +99,7 @@ function keyDownUp(event) {
     addDellBacklightSomeKeys(event);
     event.target.innerHTML += '';
     changeKeysNumber()
-    if (stateSomeKeys.shift == true && stateSomeKeys.alt == true && event.target.innerHTML != 'caps lock') changeKeysLetters(event);
+    if (stateSomeKeys.shift && stateSomeKeys.alt && event.target.innerHTML != 'caps lock') changeKeysLetters(event);
     return stateSomeKeys[event.target.innerHTML];
 }
 function addDellBacklightSomeKeys(event) {
@@ -116,7 +116,7 @@ function changeKeysLetters(event) {
 }
 function changeKeysNumber(event) {
     let keys;
-    stateSomeKeys.shift == true ? keys = 'shiftNumbers' : keys = 'numbers';
+    stateSomeKeys.shift ? keys = 'shiftNumbers' : keys = 'numbers';
     for (let i = 0; i < header.childNodes.length; i++) {
         header.childNodes[i].innerHTML = bordKeys[keys].split('')[i];
     }
