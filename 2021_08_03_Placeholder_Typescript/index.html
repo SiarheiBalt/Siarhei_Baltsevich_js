@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Gulp</title>
+  </head>
+  <style>
+    .container {
+      width: 1200px;
+      margin: auto;
+      display: flex;
+    }
+    .autors__list {
+      width: 18%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: aquamarine;
+      border-radius: 10px;
+    }
+    .autor__info {
+      background-color: aquamarine;
+      border-radius: 10px;
+      height: fit-content;
+      margin-left: 0.6em;
+      width: 79%;
+    }
+    .padding {
+      padding: 0.6em;
+    }
+    .button {
+      border: none;
+    }
+    button:hover {
+      background-color: gray;
+      color: aliceblue;
+    }
+    button:active {
+      background-color: black;
+    }
+  </style>
+
+  <body>
+    <!-- @@include('_header.html') -->
+
+    <div class="container">
+      <div class="autors__list" id="listOfAutors"></div>
+      <div class="autor__info" id="autorInfo"></div>
+    </div>
+    <script src="script.js"></script>
+    <!-- <script src="js/script.min.js"></script> -->
+  </body>
+</html>
